@@ -1,0 +1,2 @@
+;;; Generated package description from wakib-keys-20220211.1304/wakib-keys.el  -*- no-byte-compile: t -*-
+(define-package "wakib-keys" "20220211.1304" "Minor Mode for Modern Keybindings" '((emacs "24.4")) :commit "ed86134f91c532a38d2739dd15ea6cec879cbd8a" :authors '(("Abdulla Bubshait")) :maintainers '(("Abdulla Bubshait")) :maintainer '("Abdulla Bubshait") :keywords '("convenience" "keybindings" "keys") :url "https://github.com/darkstego/wakib-keys/")

@@ -47,8 +47,12 @@
   :defer t
   :config
     (setq org-directory "/home/ken/PycharmProjects/second_brain"
-          org-adapt-indentation t)
+          org-adapt-indentation t
+          org-agenda-files (directory-files-recursively org-directory "\\.org$")
+    )
+
     (add-hook 'org-mode-hook 'visual-line-mode)
+    (add-hook 'org-mode-hook 'org-indent-mode)
 )
 
 (use-package org-bullets

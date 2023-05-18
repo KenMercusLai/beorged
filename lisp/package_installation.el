@@ -1,4 +1,3 @@
-
 (setq package-list
       '(cape                ; Completion At Point Extensions
         orderless           ; Completion style for matching regexps in any order

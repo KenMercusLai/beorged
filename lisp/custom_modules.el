@@ -1,5 +1,3 @@
-(setq beorged/section-start-time (current-time))
-
 ;; String related
 (defun beorged/string-pad-right (len s)
   "If S is shorter than LEN, pad it on the right,

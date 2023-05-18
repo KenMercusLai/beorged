@@ -1,4 +1,3 @@
-
 (setq-default
  inhibit-startup-screen t               ; Disable start-up screen
  inhibit-startup-message t              ; Disable startup message

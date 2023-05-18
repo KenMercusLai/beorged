@@ -1,5 +1,4 @@
 ;; -*- lexical-binding: t -*-
-
 (defvar beorged/init-start-time (current-time) "Time when init.el was started")
 (defvar beorged/section-start-time (current-time) "Time when section was started")
 (defun beorged/report-time (section)
@@ -7,7 +6,6 @@
            (concat section " " "section time: ")
            (float-time (time-subtract (current-time) beorged/section-start-time))))
 (message "---------------------------------------------------------------")
-
 
 (setq
  site-run-file nil                         ; No site-wide run-time initializations. 
@@ -23,9 +21,27 @@
 (add-hook 'after-init-hook
           #'(lambda () (setq gc-cons-threshold (* 8 1024 1024))))
 
+(add-to-list 'load-path "~/.emacs.d/")
+
 (load "package_mgt")
 (load "package_installation")
 (load "startup")
+(load "path")
+(load "recovery")
+(load "backups")
+(load "bookmarks")
+(load "recent_files")
+(load "history")
+(load "cursor")
+(load "customization")
+
+(require 'server)
+
+(unless (server-running-p)
+  (server-start))
+
+(load "custom_modules")
+(load "sidebar")
 
 ;; string related
 ;; (setq beorged/section-start-time (current-time))

@@ -1,1 +1,0 @@
-/home/ken/.emacs.d/straight/repos/relative-date/relative-date.el

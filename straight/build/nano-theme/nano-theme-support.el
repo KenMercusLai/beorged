@@ -1,1 +1,0 @@
-/home/ken/.emacs.d/straight/repos/nano-theme/nano-theme-support.el

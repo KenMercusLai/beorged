@@ -1,1 +1,0 @@
-/home/ken/.emacs.d/straight/repos/svg-tag-mode/svg-tag-mode.el

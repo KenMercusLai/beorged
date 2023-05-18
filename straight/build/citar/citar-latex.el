@@ -1,1 +1,0 @@
-/home/ken/.emacs.d/straight/repos/citar/citar-latex.el

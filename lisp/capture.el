@@ -1,6 +1,6 @@
 
 (setq org-capture-templates
-      '(("i" "Inbox"  entry   (file "inbox.org")
+      '(("j" "Journal"  entry   (file default_journal)
          "* TODO %?Task :INBOX:\n")
 
         ("m" "Meeting" entry  (file+headline "agenda.org" "Future")
@@ -16,11 +16,11 @@
 
 (bind-key "C-c m" #'beorged/org-capture-meeting)
 
-(defun beorged/org-capture-inbox ()
+(defun beorged/org-capture-journal ()
   (interactive)
-  (org-capture nil "i"))
+  (org-capture nil "j"))
 
-(bind-key "C-c i" #'beorged/org-capture-inbox)
+(bind-key "C-c j" #'beorged/org-capture-journal)
 
 ;; Here we orverwrite the org-capture-place-template to have the capture window below the current one. There must be a better way to do that but I did not find it yet. Since we are in org-agenda deferred mode, we need to cancel epiloque/prologue.
 (with-eval-after-load 'org-capture

@@ -1,5 +1,5 @@
 
-(setq-default org-directory "~/Documents/org"
+(setq-default org-directory default_user_folder
               org-ellipsis " …"              ; Nicer ellipsis
               org-tags-column 1              ; Tags next to header title
               org-hide-emphasis-markers t    ; Hide markers
@@ -42,6 +42,8 @@
 
 (add-hook 'org-load-hook 'beorged/org-mode-hook)
 (add-hook 'org-mode-hook 'beorged/org-mode-hook)
+(add-hook 'org-mode-hook 'org-indent-mode)
+(add-hook 'org-mode-hook 'visual-line-mode)
 
 ;; A shortcut for emacs-lisp source blocks. Type “<S” (in org-mode) then press tab.
 (require 'org-tempo)

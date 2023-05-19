@@ -9,6 +9,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+(load "user_settings")
 
 (load "package_mgt")
 (load "package_installation")
@@ -136,7 +137,7 @@
 
 
 (setq beorged/section-start-time (current-time))
-;; (load "notes_config")
+(load "notes_config")
 (load "notes_read")
 (load "notes_write")
 (beorged/report-time "Notes")
@@ -152,8 +153,7 @@
 ;; ;;          
 ;; ;;    )
 
-;; ;;    (add-hook 'org-mode-hook 'visual-line-mode)
-;; ;;    (add-hook 'org-mode-hook 'org-indent-mode)
+;; ;;    
 ;; ;;)
 
 ;; ;;(use-package org-bullets
@@ -161,19 +161,3 @@
 ;; ;;  :config
 ;; ;;    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 ;; ;;)
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0" default))
- '(package-selected-packages '(use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

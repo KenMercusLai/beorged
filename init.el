@@ -55,8 +55,6 @@
 
 (load "dialogs")
 
-;; Keybaord
-;; The mode displays the key bindings following your currently entered incomplete command (a ;; prefix) in a popup.
 (load "keyboard")
 (load "display_cursor")
 (load "text")
@@ -73,6 +71,24 @@
 (load "fonts")
 (load "typography")
 (beorged/report-time "Visual")
+
+(setq beorged/section-start-time (current-time))
+(load "default_mode")
+(load "tabulations")
+(load "parenthesis")
+(load "imenu_list")
+(load "highlighting")
+(load "pdf_tools")
+(beorged/report-time "Editing")
+
+(setq beorged/section-start-time (current-time))
+(load "corfu")
+(load "orderless")
+(beorged/report-time "Completion")
+
+(setq beorged/section-start-time (current-time))
+(load "consult")
+(load "vertico")
 
 ;; ;; org mode
 ;; ;;(use-package org

@@ -72,6 +72,7 @@
 (load "typography")
 (beorged/report-time "Visual")
 
+
 (setq beorged/section-start-time (current-time))
 (load "default_mode")
 (load "tabulations")
@@ -81,14 +82,64 @@
 (load "pdf_tools")
 (beorged/report-time "Editing")
 
+
 (setq beorged/section-start-time (current-time))
 (load "corfu")
 (load "orderless")
 (beorged/report-time "Completion")
 
+
 (setq beorged/section-start-time (current-time))
 (load "consult")
 (load "vertico")
+(load "marginalia")
+(load "modeline")
+(load "minibuffer")
+(load "miniframe")
+(beorged/report-time "Minibuffer/Modeline")
+
+
+(setq beorged/section-start-time (current-time))
+(load "bibtex")
+(load "org_bib_mode")
+(beorged/report-time "Bibliography")
+
+
+(setq beorged/section-start-time (current-time))
+(load "org_general")
+(load "babel")
+(beorged/report-time "Org")
+
+
+(setq beorged/section-start-time (current-time))
+(load "agenda_general")
+(load "agenda_holidays")
+(load "daily_agenda")
+(load "tasks_agenda")
+(load "agenda_update")
+(load "agenda_refile")
+(load "capture")
+(load "navigation")
+(bind-key "C-c n" #'nano-agenda)
+(beorged/report-time "Agenda")
+
+
+(setq beorged/section-start-time (current-time))
+;; Prevent magit from writing in the header line.
+(advice-add 'magit-set-header-line-format :override #'ignore)
+;; Add fringe on the left side of magit windows such that we can highlight region using the fringe.
+(add-hook 'magit-mode-setup-hook
+          #'(lambda ()
+              (interactive)
+              (set-window-fringes nil (* 2 (window-font-width)) 0)))
+(beorged/report-time "Versioning")
+
+
+(setq beorged/section-start-time (current-time))
+;; (load "notes_config")
+(load "notes_read")
+(load "notes_write")
+(beorged/report-time "Notes")
 
 ;; ;; org mode
 ;; ;;(use-package org

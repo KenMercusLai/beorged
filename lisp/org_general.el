@@ -1,5 +1,6 @@
 
 (setq-default org-directory default_user_folder
+              org-adapt-indentation t
               org-ellipsis " …"              ; Nicer ellipsis
               org-tags-column 1              ; Tags next to header title
               org-hide-emphasis-markers t    ; Hide markers

@@ -85,23 +85,23 @@
 
 
 (setq beorged/section-start-time (current-time))
-(load "corfu")
-(load "orderless")
+(load "completion_corfu")
+(load "completion_orderless")
 (beorged/report-time "Completion")
 
 
 (setq beorged/section-start-time (current-time))
-(load "consult")
-(load "vertico")
-(load "marginalia")
-(load "modeline")
-(load "minibuffer")
-(load "miniframe")
+(load "mm_consult")
+(load "mm_vertico")
+(load "mm_marginalia")
+(load "mm_modeline")
+;; (load "mm_minibuffer")
+(load "mm_miniframe")
 (beorged/report-time "Minibuffer/Modeline")
 
 
 (setq beorged/section-start-time (current-time))
-(load "bibtex")
+(load "org_bibtex")
 (load "org_bib_mode")
 (beorged/report-time "Bibliography")
 
@@ -115,12 +115,12 @@
 (setq beorged/section-start-time (current-time))
 (load "agenda_general")
 (load "agenda_holidays")
-(load "daily_agenda")
-(load "tasks_agenda")
+(load "agenda_daily")
+(load "agenda_tasks")
 (load "agenda_update")
 (load "agenda_refile")
-(load "capture")
-(load "navigation")
+(load "agenda_capture")
+(load "agenda_navigation")
 (bind-key "C-c n" #'nano-agenda)
 (beorged/report-time "Agenda")
 
@@ -142,22 +142,6 @@
 (load "notes_write")
 (beorged/report-time "Notes")
 
-;; ;; org mode
-;; ;;(use-package org
-;; ;;  :ensure t
-;; ;;  :defer t
-;; ;;  :config
-;; ;;    (setq org-directory "/home/ken/PycharmProjects/second_brain"
-;; ;;          org-adapt-indentation t
-;; ;;          org-return-follows-link t
-;; ;;          
-;; ;;    )
-
-;; ;;    
-;; ;;)
-
-;; ;;(use-package org-bullets
-;; ;;  :ensure t
-;; ;;  :config
-;; ;;    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-;; ;;)
+;; open default journal file
+(setq org-default-notes-file (expand-file-name default_journal default_user_folder))
+(setq initial-buffer-choice  org-default-notes-file)

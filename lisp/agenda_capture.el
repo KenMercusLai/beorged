@@ -1,26 +1,20 @@
-
 (setq org-capture-templates
-      '(("j" "Journal"  entry   (file default_journal)
-         "* TODO %?Task :INBOX:\n")
-
-        ("m" "Meeting" entry  (file+headline "agenda.org" "Future")
-         "* %?Meeting   <%<%Y-%m-%d %a 12:00-13:00>>"
-         :empty-lines-after 1)))
+  '(
+    ("j" "Journal" entry (file+datetree default_journal)
+      "* %? \n"
+      :empty-lines-after 1)
+  )
+)
       
 ;; Assign key
 (bind-key "C-c c" #'org-capture)
 
-(defun beorged/org-capture-meeting ()
-  (interactive)
-  (org-capture nil "m"))
+;; I prefer a consistent keybinding without considering the mode
+;; (defun beorged/org-capture-journal ()
+;;   (interactive)
+;;   (org-capture nil "j"))
 
-(bind-key "C-c m" #'beorged/org-capture-meeting)
-
-(defun beorged/org-capture-journal ()
-  (interactive)
-  (org-capture nil "j"))
-
-(bind-key "C-c j" #'beorged/org-capture-journal)
+;; (bind-key "C-c j" #'beorged/org-capture-journal)
 
 ;; Here we orverwrite the org-capture-place-template to have the capture window below the current one. There must be a better way to do that but I did not find it yet. Since we are in org-agenda deferred mode, we need to cancel epiloque/prologue.
 (with-eval-after-load 'org-capture

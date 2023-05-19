@@ -19,4 +19,4 @@
    (current-buffer))
   (force-window-update))
 
-(bind-key "C-c d" #'beorged/toggle-window-dedicated)
+(bind-key "C-c e" #'beorged/toggle-window-dedicated)

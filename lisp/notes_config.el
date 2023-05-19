@@ -46,23 +46,22 @@
 
 ;; Denote does not define any key bindings.  This is for the user to
 ;; decide.  For example:
-;; (let ((map global-map))
-;;   (define-key map (kbd "C-c n j") #'beorged/denote-journal) ; our custom command
-;;   (define-key map (kbd "C-c n n") #'denote)
-;;   (define-key map (kbd "C-c n N") #'denote-type)
-;;   (define-key map (kbd "C-c n d") #'denote-date)
-;;   ;; If you intend to use Denote with a variety of file types, it is
-;;   ;; easier to bind the link-related commands to the `global-map', as
-;;   ;; shown here.  Otherwise follow the same pattern for `org-mode-map',
-;;   ;; `markdown-mode-map', and/or `text-mode-map'.
-;;   (define-key map (kbd "C-c n i") #'denote-link) ; "insert" mnemonic
-;;   (define-key map (kbd "C-c n I") #'denote-link-add-links)
-;;   (define-key map (kbd "C-c n l") #'denote-link-find-file) ; "list" links
-;;   (define-key map (kbd "C-c n b") #'denote-link-backlinks)
-;;   ;; Note that `denote-dired-rename-file' can work from any context, not
-;;   ;; just Dired bufffers.  That is why we bind it here to the
-;;   ;; `global-map'.
-;;   (define-key map (kbd "C-c n r") #'denote-dired-rename-file))
+(let ((map global-map))
+  (define-key map (kbd "C-c d j") #'beorged/denote-journal) ; our custom command
+  (define-key map (kbd "C-c d n") #'denote)
+  (define-key map (kbd "C-c d d") #'denote-date)
+  ;; If you intend to use Denote with a variety of file types, it is
+  ;; easier to bind the link-related commands to the `global-map', as
+  ;; shown here.  Otherwise follow the same pattern for `org-mode-map',
+  ;; `markdown-mode-map', and/or `text-mode-map'.
+  (define-key map (kbd "C-c d i") #'denote-link) ; "insert" mnemonic
+  (define-key map (kbd "C-c d I") #'denote-link-add-links)
+  (define-key map (kbd "C-c d l") #'denote-link-find-file) ; "list" links
+  (define-key map (kbd "C-c d b") #'denote-link-backlinks)
+  ;; Note that `denote-dired-rename-file' can work from any context, not
+  ;; just Dired bufffers.  That is why we bind it here to the
+  ;; `global-map'.
+  (define-key map (kbd "C-c d r") #'denote-dired-rename-file))
 
 (with-eval-after-load 'org-capture
   (setq denote-org-capture-specifiers "%l\n%i\n%?")

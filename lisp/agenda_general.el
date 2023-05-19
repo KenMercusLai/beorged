@@ -4,11 +4,7 @@
 ;; Open agenda(s)
 (bind-key "C-c a" #'org-agenda)
 ;; files
-(setq org-agenda-files (list "~/Documents/org/agenda.org"
-                             "~/Documents/org/students.org"
-                             "~/Documents/org/todo.org"
-                             "~/Documents/org/inbox.org")
-      org-agenda-diary-file (expand-file-name "diary" user-emacs-directory))
+(setq org-agenda-files (directory-files-recursively default_user_folder "\\.org$"))
 ;; Settings
 (setq org-agenda-window-setup 'current-window
       org-agenda-restore-windows-after-quit t

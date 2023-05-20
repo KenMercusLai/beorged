@@ -13,7 +13,7 @@
       org-agenda-show-current-time-in-grid t
       org-agenda-start-on-weekday 1
       org-agenda-span 7
-      org-agenda-hide-tags-regexp "." ; No tags
+      ;; org-agenda-hide-tags-regexp "." ; No tags
     ; org-agenda-hide-tags-regexp nil) ; All tags
       org-agenda-tags-column 0
     ; org-agenda-tags-column -79)      ; Left aling

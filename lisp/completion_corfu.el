@@ -3,7 +3,7 @@
 
 (setq corfu-cycle t                ; Enable cycling for `corfu-next/previous'
       corfu-auto t                 ; Enable auto completion
-      corfu-auto-delay 60.0        ; Delay before auto-completion shows up
+      corfu-auto-delay 1           ; Delay before auto-completion shows up
       corfu-separator ?\s          ; Orderless field separator
       corfu-quit-at-boundary nil   ; Never quit at completion boundary
       corfu-quit-no-match t        ; Quit when no match
